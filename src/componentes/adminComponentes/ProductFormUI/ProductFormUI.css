@@ -1,13 +1,15 @@
 .error{
     color:brown;
 }
+
 .formulario{
-max-width: 700px;
-max-height: 100%;
+   
+    width: 90%;
 margin: 2%;
 font-size: 18px;
 }
 .section{
+width: 70%;
      border-radius: 8%;
     border: solid #ef7a99;
     gap: 0.5rem;
@@ -17,7 +19,7 @@ font-size: 18px;
 .input {
 border-radius: 12px;
 padding: 1%;
-margin: 1.5% 10%;
+margin: 1% 10%;
 width: 100%;
 outline: none;
 }
@@ -34,5 +36,4 @@ background-color: #ef7a99;
 .foto{
     font-size: 18px;
     margin: 2%;
-    flex-direction: row;
 }
