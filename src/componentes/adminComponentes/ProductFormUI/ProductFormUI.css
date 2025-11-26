@@ -1,0 +1,38 @@
+.error{
+    color:brown;
+}
+.formulario{
+max-width: 700px;
+max-height: 100%;
+margin: 2%;
+font-size: 18px;
+}
+.section{
+     border-radius: 8%;
+    border: solid #ef7a99;
+    gap: 0.5rem;
+    margin: 20px 8%;
+    padding:5%;
+}
+.input {
+border-radius: 12px;
+padding: 1%;
+margin: 1.5% 10%;
+width: 100%;
+outline: none;
+}
+.div{
+    display: flex;
+}
+label{
+    align-content: center;
+}
+.btn{
+    margin-top: 2% ;
+background-color: #ef7a99;
+}
+.foto{
+    font-size: 18px;
+    margin: 2%;
+    flex-direction: row;
+}
