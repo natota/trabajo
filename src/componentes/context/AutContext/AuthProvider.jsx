@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { AuthContext } from "./AutContext";
+import { Ventana } from "../../../Utiles/ventana/Ventana";
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(() => {
@@ -21,9 +22,8 @@ export const AuthProvider = ({ children }) => {
     const logout = () => {
         sessionStorage.removeItem("session");
         setUser(null);
-        alert("cerrando sesión");
+        Ventana("info", "cerrando sesión", "top-center");
     };
-
     return (
         <AuthContext.Provider value={{ user, login, logout }}>{children}</AuthContext.Provider>);
 }

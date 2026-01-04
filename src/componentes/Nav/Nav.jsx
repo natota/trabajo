@@ -11,7 +11,7 @@ export default function Nav() {
                 <li><Link to={"/categoria/oriental"}>Oriental</Link></li>
                 <li><Link to={"/categoria/ambar"}>Ambar</Link></li>
                 <li><Link to={"/carrito"}>Carrito</Link>
-                    {(getTotalItems() > 0) && (<span className="cart-count">{getTotalItems()}</span>)}
+                    {(<span className="cart-count">{getTotalItems()}</span>)}
                 </li>
 
             </ul>

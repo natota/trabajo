@@ -1,39 +1,54 @@
-.error{
-    color:brown;
+.formulario {
+
+    width: 100%;
+    margin: 2%;
+    font-size: 18px;
 }
 
-.formulario{
-   
-    width: 90%;
-margin: 2%;
-font-size: 18px;
+label {
+    width: 40%;
+    text-align: left;
+    margin-bottom: 1%;
 }
-.section{
-width: 70%;
-     border-radius: 8%;
-    border: solid #ef7a99;
-    gap: 0.5rem;
-    margin: 20px 8%;
-    padding:5%;
-}
+
 .input {
-border-radius: 12px;
-padding: 1%;
-margin: 1% 10%;
-width: 100%;
-outline: none;
+    border-radius: 12px;
+    padding: 5px;
+    margin: 0.5% 10px;
+    outline: none;
 }
-.div{
+
+.error {
+    font-size: 14px;
+    color: #ff6b6b;
+}
+.div {
     display: flex;
+    flex-direction: column;
+    margin-bottom: 1%;
+    gap: 6px;
+    align-items: left;
+    /* 🔥 centra el label con el input */
 }
-label{
-    align-content: center;
+
+.div2 {
+    display: flex;
+    flex-direction: row;
 }
-.btn{
-    margin-top: 2% ;
-background-color: #ef7a99;
+
+
+
+.btn {
+    margin-top: 2%;
+    background-color: #ef7a99;
 }
-.foto{
+
+.foto {
     font-size: 18px;
     margin: 2%;
+}
+
+.btn-eliminar {
+    background-color: #09928f;
+    margin-top: 2%;
 }

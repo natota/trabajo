@@ -1,37 +1,45 @@
-.itemDetail{
+.itemDetail {
     display: flex;
-
-    border:solid #F2668B;
+    border: solid #F2668B;
     border-radius: 20px;
-    margin:  5% 15%;
-    padding: 2% 4% ;
+    margin: 3% 25%;
+    padding: 1% 4%;
+    width: 50%;
 }
-h3{
-  color:  #0FC2C0;
+
+h3 {
+    color: #0FC2C0;
 }
-.boton{
-    background-color:#1a817f;
+
+.boton {
+    background-color: #1a817f;
     margin-top: 15px;
 }
+
 .nro2 {
     padding: 30px 8px;
 }
-.p{
-    padding: 8% ;
+
+.p {
+    padding: 8%;
 }
-.img1{
+
+.img1 {
     height: 170px;
     width: 150px;
-    margin:auto 2%;
+    margin: auto 2%;
 }
-@media  (max-width:600px) {
-    .itemDetail{
-        justify-content: center;
-        padding: 2% 5%;
-    flex-wrap: wrap;
 
-}
-.nro2{
-    padding: 2% 5% ;
-}
+@media (max-width:600px) {
+    .itemDetail {
+        justify-content: center;
+        padding: 2% 3%;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: auto 5%;
+    }
+
+    .nro2 {
+        padding: 2% 5%;
+    }
 }

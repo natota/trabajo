@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { CartContext } from "./CartContext"
+import { Ventana } from "../../../Utiles/ventana/Ventana";
 
 export const CartProvider = ({ children }) => {
     const [carrito, setCarrito] = useState([]);
@@ -20,16 +21,26 @@ export const CartProvider = ({ children }) => {
                 }
             });
             setCarrito(masCarrito);
-            alert("Agregado al carrito");
+Ventana("info", "Cantidad actualizada en el carrito", "top-center");
+           // alert("Agregado al carrito");
         } else {
             setCarrito([...carrito, item]);
-            alert(`${item.nombre} agregado`);
+            Ventana("success", `${item.nombre} agregado al carrito`, "top-center");
+        //    alert(`${item.nombre} agregado`);
         }
     };
+    const updateCantidad=(id, cantidad)=>{
+        if (cantidad===0){
+            borrarItem(id);
+            return
+        }
+        setCarrito(carrito.map(p=>p.id===id?{...p,cantidad}:p));
+    }
     const borrarItem = (id) => {
         const filtrarItem = carrito.filter((p) => p.id !== id);
         setCarrito(filtrarItem);
-        alert("producto eliminado");
+        Ventana("warning", "Producto eliminado del carrito", "top-center");
+      //  alert("producto eliminado");
     };
     const limpiarCarrito = () => {
         setCarrito([])
@@ -45,10 +56,11 @@ export const CartProvider = ({ children }) => {
     const checkout=()=>{
         const ok=confirm("¿Seguro que quiere finalizar su compora?");
         if (ok){
-            alert("Compra realizada con éxito");
+            Ventana("success", "Compra realizada con éxito", "top-center");
+         //   alert("Compra realizada con éxito");
             limpiarCarrito();
         }
     }
-    const values = { carrito, addItem, limpiarCarrito, borrarItem, total, getTotalItems, checkout };
+    const values = { carrito, addItem, updateCantidad, limpiarCarrito, borrarItem, total, getTotalItems, checkout };
     return <CartContext.Provider value={values}>{children}</CartContext.Provider>;
 }

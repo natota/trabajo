@@ -5,7 +5,7 @@ import "./Header.css";
 export default function Header() {
     return (
         <header  >
-            <div className="div">
+            <div className="header">
                 <Link to="/"> <img className="img" src="/fotos/perfume.png" alt="logo de la empresa"></img></Link>
                 <h1>Fragancias de Mujer</h1>
             </div>

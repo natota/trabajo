@@ -1,4 +1,4 @@
-export const validarProductos = (producto, fileRequired = true) => {
+export const validarProductos = (producto, isEdit ) => {
     const errores = {};
     if (!producto.nombre.trim()) {
         errores.nombre = "el nombre es obligatorio";
@@ -12,7 +12,7 @@ export const validarProductos = (producto, fileRequired = true) => {
     if (!producto.categoria.trim()) {
         errores.categoria = "debe ingresar la categoría del producto";
     }
-    if (fileRequired && !producto.file) {
+    if (!isEdit && !producto.file) {
         errores.file = "debe ingresar una imagen";
     }
     if (!producto.detalle.trim()){

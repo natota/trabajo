@@ -6,15 +6,16 @@ import { ItemDetailContainer } from './componentes/ItemDetailContainer/ItemDetai
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartProvider } from './componentes/context/CartContext/CartProvider'
 import { Carrito } from './componentes/Carrito/Carrito'
-import { ProductFormContainer } from './componentes/adminComponentes/ProductFormContainer/ProductFormContainer'
 import { MainLayout } from './layouts/MainLayouts'
 import { AdminLayout } from './layouts/AdminLayouts'
 import { RutaProtegida } from './componentes/RutaProtegida/RutaProtegida'
 import { Login } from './componentes/Login/Login'
 import Header from './componentes/Header/Header'
+import { Crud } from './componentes/adminComponentes/FormularioEdicion/Crud'
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-
   return (
     <>
       <BrowserRouter>
@@ -31,12 +32,12 @@ function App() {
                 <Route index element={<Login />}></Route>
                 <Route path="alta-productos" element={<RutaProtegida>
                   <Header/>
-                  <ProductFormContainer />
+                  <Crud />
                   <Footer/>
                 </RutaProtegida>} />
               </Route>
             </Routes>
-          
+          <ToastContainer />
           </div>
         </CartProvider>
       </BrowserRouter>

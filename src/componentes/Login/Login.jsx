@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { UseAuthContext } from "../context/AutContext/UseAuthContext";
 import { Navigate, useNavigate } from "react-router-dom";
-import "../adminComponentes/ProductFormUI/ProductFormUI.css";
+import "../Login/Login.css";
+import { Ventana } from "../../Utiles/ventana/Ventana";
 
 export const Login = () => {
     const [usuario, setUsuario] = useState({ nombre: "", contrasena: "" });
@@ -18,24 +19,25 @@ export const Login = () => {
         e.preventDefault();
         const success = login(usuario.nombre, usuario.contrasena);
         if (success) {
-            navigate(`/admin/alta-productos`);
+            navigate(`/admin/alta-productos`);//si estoy logueada paso directamente al alta sin loguin
         } else {
-            alert("credenciales incorrectas");
+            Ventana("error", "Credenciales incorrectas", "top-center");
+            //alert("credenciales incorrectas");
             setUsuario({ nombre: "", contrasena: "" });
-        }}
+        }};
     return (
-        <section className="section">
-            <form className="formulario" onSubmit={handleSubmit}>
+        <section className="login-section">
+            <form className="login-formulario" onSubmit={handleSubmit}>
                 <h2> Iniciar sesion</h2>
-                <div className="div">
+                <div className="login-div">
                     <label >Usuario: </label>
-                    <input className="input" type="text" name="nombre" value={usuario.nombre} onChange={handleChange} />
+                    <input className="login-input" type="text" name="nombre" value={usuario.nombre} onChange={handleChange} />
                 </div>
-                <div className="div">
+                <div className="login-div">
                     <label htmlFor="">Contraseña:</label>
-                    <input className="input" type="password" name="contrasena" value={usuario.contrasena} onChange={handleChange} />
+                    <input className="login-input" type="password" name="contrasena" value={usuario.contrasena} onChange={handleChange} />
                 </div>
-                <button className="btn" type="submit">Iniciar Sesión</button>
+                <button className="login-btn" type="submit">Iniciar Sesión</button>
             </form>
         </section>
     )
