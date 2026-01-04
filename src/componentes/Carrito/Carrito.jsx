@@ -22,7 +22,7 @@ export const Carrito = () => {
                                 handleUpdate(prod.id, cantidad)} />
                         </div>
                     </Item>)))
-                : ( <p>Tu carrito está vacío</p>)}
+                : ( <p style={{height:350}}>Tu carrito está vacío</p>)}
         
             {carrito.length ? (
                 <div>

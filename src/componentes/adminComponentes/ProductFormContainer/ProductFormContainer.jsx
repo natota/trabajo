@@ -19,7 +19,7 @@ export const ProductFormContainer = ({ productoSeleccionado, onCerrar }) => {
             setProducto({ ...productoSeleccionado });
         }
     }, [productoSeleccionado]);
-    
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setProducto({ ...producto, [name]: value });
@@ -46,13 +46,14 @@ export const ProductFormContainer = ({ productoSeleccionado, onCerrar }) => {
             };
             if (productoSeleccionado) {
                 await editarProducto(productoSeleccionado.id, datoProducto);
-            Ventana("success", "Producto editado con éxito", "top-center");
-               // alert("Producto editado con éxito");
+                Ventana("success", "Producto editado con éxito", "top-center");
+                // alert("Producto editado con éxito");
             } else {
                 await crearProducto(datoProducto);//no puedo subir el estado porque no tengo la imagen, por eso uso datoProducto que la tiene
-            Ventana("success", "Producto cargado con éxito", "top-center");
-               // alert("Producto cargado con éxito");
+                Ventana("success", "Producto cargado con éxito", "top-center");
+                // alert("Producto cargado con éxito");
             }
+            //para que limpie el formulario
             setProducto({ nombre: "", precio: "", categoria: "", descripcion: "", detalle: "" });
             setFile(null);//queda la última imagen, no importa
         } catch (error) {
@@ -60,6 +61,7 @@ export const ProductFormContainer = ({ productoSeleccionado, onCerrar }) => {
         } finally {
             setLoading(false);
         }
+        onCerrar();
     };
 
     const handleDelete = async () => {

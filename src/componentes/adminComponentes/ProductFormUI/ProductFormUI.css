@@ -1,12 +1,11 @@
 .formulario {
-
     width: 100%;
     margin: 2%;
     font-size: 18px;
 }
 
 label {
-    width: 40%;
+    width: 30%;
     text-align: left;
     margin-bottom: 1%;
 }
@@ -16,6 +15,7 @@ label {
     padding: 5px;
     margin: 0.5% 10px;
     outline: none;
+    width: 60%;
 }
 
 .error {

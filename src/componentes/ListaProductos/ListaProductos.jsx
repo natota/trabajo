@@ -5,7 +5,7 @@ import "./ListaProductos.css";
 
 const BASE_URL = "https://6900bc75ff8d792314bb3a31.mockapi.io/react/productos";
 
-export const ListaProductos = ({producto, editarProducto}) => {
+export const ListaProductos = ({producto, editarProducto, loading}) => {
     const [productos, setProductos] = useState([]);
     const { categoria } = useParams();
     useEffect(() => {
